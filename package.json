@@ -1,4 +1,19 @@
 {
+  "dependencies": {
+    "@solana/web3.js": "^1.35.1",
+    "bs58": "^5.0.0",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/node": "13.7.0",
+    "husky": "4.2.1",
+    "tsdx": "0.12.3",
+    "tslib": "1.10.0",
+    "typescript": "^4.6.2",
+    "webpack": "4.41.6",
+    "webpack-cli": "3.3.11"
+  },
   "name": "@bastion-multisig/solana-wallet",
   "description": "Solana Wallet",
   "version": "2.0.0",
@@ -34,16 +49,6 @@
     "lint": "tsdx lint src test",
     "prepare": "yarn lint && yarn build && yarn test"
   },
-  "devDependencies": {
-    "@types/jest": "^27.4.1",
-    "@types/node": "13.7.0",
-    "husky": "4.2.1",
-    "tsdx": "0.12.3",
-    "tslib": "1.10.0",
-    "typescript": "^4.6.2",
-    "webpack": "4.41.6",
-    "webpack-cli": "3.3.11"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint"
@@ -55,9 +60,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "dependencies": {
-    "@solana/web3.js": "^1.35.1",
-    "bs58": "^5.0.0",
-    "tweetnacl": "^1.0.3"
+  "publishConfig": {
+      "access": "public"
   }
 }

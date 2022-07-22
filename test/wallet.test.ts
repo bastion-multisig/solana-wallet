@@ -40,7 +40,12 @@ describe('Wallet', () => {
     const signature = transaction.signatures[0].signature;
 
     expect(
-      verifyTransactionSignature(account.pubkey, signature, TEST_TRANSACTION())
+      signature &&
+        verifyTransactionSignature(
+          account.pubkey,
+          signature,
+          TEST_TRANSACTION()
+        )
     ).toBeTruthy();
 
     expect(signature).toEqual(TEST_TRANSACTION_SIGNATURE);
@@ -58,7 +63,12 @@ describe('Wallet', () => {
     const signature = result.signatures[0].signature;
 
     expect(
-      verifyTransactionSignature(account.pubkey, signature, TEST_TRANSACTION())
+      signature &&
+        verifyTransactionSignature(
+          account.pubkey,
+          signature,
+          TEST_TRANSACTION()
+        )
     ).toBeTruthy();
 
     expect(signature).toEqual(TEST_TRANSACTION_SIGNATURE);
