@@ -16,7 +16,7 @@
   },
   "name": "@bastion-multisig/solana-wallet",
   "description": "Solana Wallet",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "author": "Alex Harley <github.com/alexbharley>",
   "license": "MIT",
   "keywords": [
