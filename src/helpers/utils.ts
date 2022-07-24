@@ -23,7 +23,7 @@ export function deserialiseTransaction(
 ): Transaction {
   const tx = new Transaction({
     feePayer:
-      serialised.feePayer != null
+      serialised.feePayer != undefined
         ? new PublicKey(serialised.feePayer)
         : undefined,
     recentBlockhash: serialised.recentBlockhash,
@@ -76,7 +76,7 @@ export function serializeAllTransactions(
 
 export function serialiseTransaction(tx: Transaction): SolanaSignTransaction {
   return {
-    feePayer: tx.feePayer!.toBase58(),
+    feePayer: tx.feePayer?.toBase58() ?? undefined,
     recentBlockhash: tx.recentBlockhash!,
     instructions: tx.instructions.map(serializeInstruction),
     nonceInfo: tx.nonceInfo
