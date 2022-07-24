@@ -20,7 +20,7 @@ export interface SolanaSignAllTransactions {
 
 export interface SolanaSignTransaction {
   /** public key of the transaction fee payer */
-  feePayer: string;
+  feePayer?: string;
   /** instructions to be atomically executed */
   instructions: SolanaSignInstruction[];
   /** Nonce information. If populated, transaction will use a durable Nonce hash instead of a recentBlockhash. */

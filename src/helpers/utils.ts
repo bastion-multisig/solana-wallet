@@ -22,7 +22,10 @@ export function deserialiseTransaction(
   serialised: SolanaSignTransaction
 ): Transaction {
   const tx = new Transaction({
-    feePayer: new PublicKey(serialised.feePayer),
+    feePayer:
+      serialised.feePayer != null
+        ? new PublicKey(serialised.feePayer)
+        : undefined,
     recentBlockhash: serialised.recentBlockhash,
   });
 
